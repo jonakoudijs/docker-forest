@@ -1,2 +1,3 @@
-# docker-theforest
-The Forest dedicated server Docker image
+# The Forest Docker Image
+
+Dedicated server of The Forest on Ubuntu
