@@ -19,13 +19,13 @@ RUN useradd -m -d $HOME $USER
 RUN mkdir -p $HOME/saves $HOME/config
 
 # Install prerequisites
-RUN apt update -y \
- && apt install -y winbind wine-stable xvfb \
+RUN apt-get update -y \
+ && apt-get install -y winbind wine-stable xvfb \
  && rm -rf /var/lib/apt/lists/*
 
 # Download the application via steamcmd
 RUN steamcmd +login anonymous +@sSteamCmdForcePlatformType windows \
-    +force_install_dir $HOME +app_update 556450 +validate +quit
+    +force_install_dir $HOME +app_update 556450 validate +quit
 
 # Copy configuration
 COPY config/server.cfg $HOME/config/server.cfg
