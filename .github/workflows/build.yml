@@ -27,7 +27,7 @@ jobs:
           load: true
           tags: jonakoudijs/theforest:latest
       - name: Test Image
-        run: dgoss jonakoudijs/theforest:latest
+        run: dgoss run jonakoudijs/theforest:latest
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
