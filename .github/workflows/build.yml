@@ -3,14 +3,17 @@ on:
   push:
     branches:
       - master
-    paths:
-      - README.md
-      - .github/workflows/description.yml
+  schedule:
+    - cron: '0 10 * * 1'
+
 
 jobs:
   build-push-image:
     runs-on: ubuntu-18.04
     steps:
+      - uses: e1himself/goss-installation-action@v1.0.3
+        with:
+          version: 'v0.3.14'
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login to Docker Hub
@@ -21,5 +24,15 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: .
+          load: true
+          tags: jonakoudijs/theforest:latest
+      - name: Test Image
+        run: dgoss jonakoudijs/theforest:latest
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          platforms: linux/amd64
           push: true
           tags: jonakoudijs/theforest:latest
