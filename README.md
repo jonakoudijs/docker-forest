@@ -7,9 +7,8 @@
 # The Forest Server Docker Image
 
 Dedicated server of The Forest on Ubuntu. The server software of The Forest is
-only available on Windows and therefor running with Wine in this image.
-
-The image is automatically rebuild and tested every week.
+only available on Windows and therefor running with Wine in this image. The
+image is automatically rebuild and tested every week.
 
 ## Tags
 
@@ -36,8 +35,11 @@ docker run -v \
     jonakoudijs/theforest:latest
 ```
 
-
 ## Configuration
+
+The configuration of the server can be done in the [`server.cfg`](config/server.cfg)
+file. The settings can be overwritten by copying a custom version to
+`/data/config/server.cfg` or changing the config file and rebuilding it.
 
 ## Sources
 
