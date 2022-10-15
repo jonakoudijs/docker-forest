@@ -6,18 +6,10 @@
 
 # The Forest Server Docker Image
 
-Dedicated server of The Forest on Ubuntu.
-SteamCMD on various Docker base images for downloading and running Steam games
-and game server software. The images are build automatically every 6 hours with
-[Github Actions](https://github.com/steamcmd/docker/actions) and tagged on type
-of base image.
+Dedicated server of The Forest on Ubuntu. The server software of The Forest is
+only available on Windows and therefor running with Wine in this image.
 
-The images are automatically rebuild and tested every week.
-
-For detailed information about SteamCMD,
-see [wiki](https://developer.valvesoftware.com/wiki/SteamCMD).
-Are you looking for a programmatic way to retrieve information via SteamCMD,
-have a look at [steamcmd.net](https://www.steamcmd.net).
+The image is automatically rebuild and tested every week.
 
 ## Tags
 

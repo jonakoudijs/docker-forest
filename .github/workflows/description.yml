@@ -3,23 +3,20 @@ on:
   push:
     branches:
       - master
-    paths:
-      - README.md
-      - .github/workflows/description.yml
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 10 * * 1'
 
 jobs:
-  build-push-image:
+  update-docker-readme:
     runs-on: ubuntu-18.04
     steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: jonakoudijs/theforest:latest
+      - uses: actions/checkout@v2
+      - name: Update Docker Hub Description
+        uses: peter-evans/dockerhub-description@v2
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKERHUB_REPOSITORY: jonakoudijs/theforest
