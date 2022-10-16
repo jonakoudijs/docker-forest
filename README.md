@@ -18,21 +18,28 @@ image is automatically rebuild every week.
 
 ### Run with default configuration
 ```shell
-docker run -it --rm \
+docker run --name forest -d \
   -p 27015:27015/tcp -p 27015:27015/udp \
   -p 27016:27016/tcp -p 27016:27016/udp \
   -p 8766:8766/tcp   -p 8766:8766/udp \
-    jonakoudijs/theforest:latest
+  jonakoudijs/theforest:latest
 ```
-### Run and persist instance saves
+### Run and persist server saves
 ```shell
-docker run -v \
-  "$(pwd)/saves":$/data/saves
-  -it --rm \
+docker create volume forest-saves
+```
+```shell
+docker run --name forest -d \
+  -v forest-saves:/data/saves \
   -p 27015:27015/tcp -p 27015:27015/udp \
   -p 27016:27016/tcp -p 27016:27016/udp \
   -p 8766:8766/tcp   -p 8766:8766/udp \
-    jonakoudijs/theforest:latest
+  jonakoudijs/theforest:latest
+```
+### Run interactively for debugging
+```shell
+docker run -it --entrypoint="" \
+  jonakoudijs/theforest:latest /bin/bash
 ```
 
 ## Configuration
