@@ -29,6 +29,7 @@ RUN steamcmd +login anonymous +@sSteamCmdForcePlatformType windows \
 
 # Copy configuration
 COPY config/server.cfg $HOME/config/server.cfg
+COPY script/wrapper    $HOME/wrapper
 
 ##################### INSTALLATION END #####################
 
@@ -48,5 +49,5 @@ USER $USER
 WORKDIR $HOME
 
 # Set default container command
-ENTRYPOINT [""]
-CMD xvfb-run --auto-servernum --server-args='-screen 0 640x480x24:32' wine ./TheForestDedicatedServer.exe -batchmode -nographics -savefolderpath "/data/saves/" -configfilepath "/data/config/server.cfg"
+ENTRYPOINT ["$HOME/wrapper"]
+CMD ["-batchmode", "-nographics", "-savefolderpath", "$HOME/saves/", "-configfilepath", "$HOME/config/server.cfg"]

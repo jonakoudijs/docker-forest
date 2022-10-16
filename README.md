@@ -8,7 +8,7 @@
 
 Dedicated server of The Forest on Ubuntu. The server software of The Forest is
 only available on Windows and therefor running with Wine in this image. The
-image is automatically rebuild and tested every week.
+image is automatically rebuild every week.
 
 ## Tags
 

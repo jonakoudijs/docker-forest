@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# script variables
+GAME_DIR="$(pwd)"
+GAME_CMD="$@"
+GAME_BIN="xvfb-run --auto-servernum --server-args='-screen 0 640x480x24:32' wine ./TheForestDedicatedServer.exe"
+GAME_CFG="$GAME_DIR/config/server.cfg"
+
+# execute game executable
+eval $GAME_BIN $GAME_CMD
