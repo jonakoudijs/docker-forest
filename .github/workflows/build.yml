@@ -27,9 +27,7 @@ jobs:
         with:
           load: true
           tags: jonakoudijs/theforest:latest
-      - name: Test Image
-        run: docker run --rm jonakoudijs/theforest:latest
-      - name: Build Image
+      - name: Push Image
         uses: docker/build-push-action@v3
         with:
           platforms: linux/amd64
