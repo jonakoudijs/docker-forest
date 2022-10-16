@@ -50,5 +50,5 @@ USER $USER
 WORKDIR $HOME
 
 # Set default container command
-ENTRYPOINT ["$HOME/wrapper"]
+ENTRYPOINT ["/data/wrapper"]
 CMD ["-batchmode", "-nographics", "-savefolderpath", "$HOME/saves/", "-configfilepath", "$HOME/config/server.cfg"]
