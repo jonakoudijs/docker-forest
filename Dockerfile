@@ -29,7 +29,7 @@ RUN steamcmd +login anonymous +@sSteamCmdForcePlatformType windows \
 
 # Copy configuration
 COPY config/server.cfg $HOME/config/server.cfg
-COPY script/wrapper    $HOME/wrapper
+COPY scripts/wrapper   $HOME/wrapper
 
 ##################### INSTALLATION END #####################
 
