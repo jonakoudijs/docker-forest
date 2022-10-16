@@ -40,7 +40,8 @@ VOLUME ["$HOME/saves"]
 EXPOSE 8766/udp 8766/tcp 27015/udp 27015/tcp 27016/udp 27016/tcp
 
 # Correct file permissions
-RUN chown -R $USER $HOME/saves $HOME/config
+RUN chown -R $USER $HOME/saves $HOME/config \
+ && chmod +x $HOME/wrapper
 
 # Switch to user
 USER $USER
@@ -49,5 +50,5 @@ USER $USER
 WORKDIR $HOME
 
 # Set default container command
-ENTRYPOINT ["/data/wrapper"]
+ENTRYPOINT ["$HOME/wrapper"]
 CMD ["-batchmode", "-nographics", "-savefolderpath", "$HOME/saves/", "-configfilepath", "$HOME/config/server.cfg"]
