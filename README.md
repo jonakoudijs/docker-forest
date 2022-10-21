@@ -1,7 +1,7 @@
-[![Build Status](https://img.shields.io/github/workflow/status/jonakoudijs/docker-theforest/build.svg?logo=github)](https://github.com/jonakoudijs/docker-theforest/actions)
-[![CodeFactor](https://www.codefactor.io/repository/github/jonakoudijs/docker-theforest/badge)](https://www.codefactor.io/repository/github/jonakoudijs/docker-theforest)
-[![Docker Pulls](https://img.shields.io/docker/pulls/jonakoudijs/theforest.svg)](https://hub.docker.com/r/jonakoudijs/theforest)
-[![Image Size](https://img.shields.io/docker/image-size/jonakoudijs/theforest/latest.svg)](https://hub.docker.com/r/jonakoudijs/theforest)
+[![Build Status](https://img.shields.io/github/workflow/status/jonakoudijs/docker-forest/build.svg?logo=github)](https://github.com/jonakoudijs/docker-forest/actions)
+[![CodeFactor](https://www.codefactor.io/repository/github/jonakoudijs/docker-forest/badge)](https://www.codefactor.io/repository/github/jonakoudijs/docker-forest)
+[![Docker Pulls](https://img.shields.io/docker/pulls/jonakoudijs/forest.svg)](https://hub.docker.com/r/jonakoudijs/forest)
+[![Image Size](https://img.shields.io/docker/image-size/jonakoudijs/forest/latest.svg)](https://hub.docker.com/r/jonakoudijs/forest)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # The Forest Server Docker Image
@@ -22,7 +22,7 @@ docker run --name forest -d \
   -p 27015:27015/tcp -p 27015:27015/udp \
   -p 27016:27016/tcp -p 27016:27016/udp \
   -p 8766:8766/tcp   -p 8766:8766/udp \
-  jonakoudijs/theforest:latest
+  jonakoudijs/forest:latest
 ```
 ### Run and persist server saves
 ```shell
@@ -34,12 +34,12 @@ docker run --name forest -d \
   -p 27015:27015/tcp -p 27015:27015/udp \
   -p 27016:27016/tcp -p 27016:27016/udp \
   -p 8766:8766/tcp   -p 8766:8766/udp \
-  jonakoudijs/theforest:latest
+  jonakoudijs/forest:latest
 ```
 ### Run interactively for debugging
 ```shell
 docker run -it --entrypoint="" \
-  jonakoudijs/theforest:latest /bin/bash
+  jonakoudijs/forest:latest /bin/bash
 ```
 
 ## Configuration

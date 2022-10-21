@@ -26,10 +26,10 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           load: true
-          tags: jonakoudijs/theforest:latest
+          tags: jonakoudijs/forest:latest
       - name: Push Image
         uses: docker/build-push-action@v3
         with:
           platforms: linux/amd64
           push: true
-          tags: jonakoudijs/theforest:latest
+          tags: jonakoudijs/forest:latest

@@ -18,4 +18,4 @@ jobs:
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          DOCKERHUB_REPOSITORY: jonakoudijs/theforest
+          DOCKERHUB_REPOSITORY: jonakoudijs/forest
