@@ -1,4 +1,4 @@
-[![Build Status](https://img.shields.io/github/workflow/status/jonakoudijs/docker-forest/build.svg?logo=github)](https://github.com/jonakoudijs/docker-forest/actions)
+[![Build Status](https://github.com/jonakoudijs/docker-forest/actions/workflows/build.yml/badge.svg)](https://github.com/jonakoudijs/docker-forest/actions)
 [![CodeFactor](https://www.codefactor.io/repository/github/jonakoudijs/docker-forest/badge)](https://www.codefactor.io/repository/github/jonakoudijs/docker-forest)
 [![Docker Pulls](https://img.shields.io/docker/pulls/jonakoudijs/forest.svg)](https://hub.docker.com/r/jonakoudijs/forest)
 [![Image Size](https://img.shields.io/docker/image-size/jonakoudijs/forest/latest.svg)](https://hub.docker.com/r/jonakoudijs/forest)
