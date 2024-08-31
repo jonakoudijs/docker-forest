@@ -26,7 +26,7 @@ docker run --name forest -d \
 ```
 ### Run and persist server saves
 ```shell
-docker create volume forest-saves
+docker volume create forest-saves
 ```
 ```shell
 docker run --name forest -d \
